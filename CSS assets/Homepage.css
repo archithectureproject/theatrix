@@ -1,0 +1,258 @@
+/* Configures the background settings, makes the background permanent and not resize whenever zooming */
+body{
+	background-image: url("../media assets/background3.png");
+	height: 100%;
+  width: auto;
+	background-position: top;
+	background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ------------------------------------------------------- MAIN TOOLBAR FOR NAVIGATION -------------------------- */
+div.menu {
+  height: 5rem;
+  direction: rtl;
+  /* ------Creates a sticky toolbar for navigation across pages-------*/
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* -----------------------------------------------------------------*/
+  background-color: rgb(0, 0, 0);
+}
+
+/* Home button in the toolbar */
+div.menu a.toolbar-home{
+  width:  58px;
+  transition: width 0.5s;
+}
+
+/* Button in the toolbar */
+div.menu a{
+  display: inline-block;
+  margin-right: 1em;
+  list-style-type: none;
+  margin: 2em 0;
+
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+
+  border-radius: 15px;
+  border-style: groove;
+
+  padding-right: 2em;
+  padding-left: 2em;
+
+  border-right: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
+
+  width:  130px;
+  transition: width 0.5s;
+}
+
+/* Hover over ANY button in the toolbar */
+div.menu a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  filter: drop-shadow(0px 1px 6px rgb(255, 255, 255));
+  width: 150px;
+}
+
+/* Hover over HOME button in the toolbar */
+div.menu a.toolbar-home:hover {
+  width: 78px;
+}
+
+/* Hover over a restricted button in the toolbar (has no href link) */
+div.menu a.restrictAcess:hover {
+  cursor: not-allowed;
+}
+
+/* Website image at the top left */
+div.menuphoto{
+  /* ------Creates a sticky image for navigation across pages-------*/
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+/* -----------------------------------------------------------------*/
+  display:block;
+  max-block-size: 0px;
+  width: 100px;
+}
+
+
+/*----------------------------------------------------------------------------- SLIDESHOW ----------------------------------------------*/
+
+/* Block containing ads which rotate using an animation */
+#slider {
+	overflow: hidden;
+  position: relative;
+  width: 63.3rem;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* Container for the ads */
+#slider figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+  /* Loop animation */
+	animation: 20s slider infinite;
+}
+
+/* Defines each ad (image) in the slideshow */
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+
+/* Looping animation */
+@keyframes slider {
+	0% {
+		left: 0; /* Starts at ad1 */
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%; /* Will end and return to ad1 */
+	}
+}
+
+/*------------------------------------------------------------------- MOVIE TABLE -----------------------------------------------------*/
+
+/* Contains all the movies and info */
+table {
+  background-color: transpant;  /* MUST BE TRANSPARENT TO WORK FOR EVEN AND ODD ROWS! */
+  border-collapse: collapse; /* makes row and column line invisible */
+  width: 50rem;
+  margin: auto;
+  position: static;
+}
+
+/* even rows become grey */
+table tr.movie-listing:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* odd rows become white */
+table tr.movie-listing:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Contains all the info about a single movie */
+table tr.movie-listing td{
+  padding: 8px;
+  height: 50px;
+  text-align: right;
+  direction: rtl;
+}
+
+/* --------------------------- ALL MOVIE INFO -------------*/
+table td.movieName{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 2.5em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+table td.description{
+  color: rgb(59, 59, 59);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table td.categories{
+  color: rgb(143, 143, 143);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+td.movie-poster img{
+  border-radius: 25px;
+  display: block;
+  max-block-size: 15rem;
+  height: auto;
+  filter: drop-shadow(0px 5px 4px rgb(58, 57, 57));
+}
+
+td.movie-poster img:hover{
+  cursor: pointer;
+  filter: drop-shadow(0px 5px 10px rgb(0, 0, 0));
+}
+
+/* Text below movie image (available but not utilized) */
+td.movie-poster text{
+  text-align: center;
+}
+/* ----------------------------------------------------- */
+
+
+
+/* -----------------------  Button for movie times   ---------------------*/
+
+/* Allocate enough space so no elements are pushed when hovering over buttons */
+table tr.movie-screenings{
+  height: 55px;;
+}
+
+table td button.movieTimeButton{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: medium;
+
+  border-color: rgb(121, 120, 120);
+  background-color: rgb(124, 124, 124);
+  border-radius: 15px;
+  border-style: groove;
+
+  filter: drop-shadow(0px 1px 2px rgb(90, 90, 90));
+
+  height: 24px;
+  width:  64.0156px;
+  transition: width 0.3s, height 0.5s;
+}
+
+table td button.movieTimeButton:hover {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+
+  background-color: rgb(152, 114, 184);
+  border-color: rgb(152, 114, 184);
+  filter: drop-shadow(0px 1px 4px rgb(152, 114, 184));
+
+  width:  80px;
+  height: 30px;
+}
+

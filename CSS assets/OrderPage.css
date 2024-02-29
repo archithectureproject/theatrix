@@ -1,0 +1,326 @@
+/* Configures the background settings, makes the background permanent and not resize whenever zooming */
+body{
+	background-image: url("../media assets/background3.png");
+	height: 100%;
+  width: auto;
+	background-position: top;
+	background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ------------------------------------------------------- MAIN TOOLBAR FOR NAVIGATION -------------------------- */
+div.menu {
+  height: 5rem;
+  direction: rtl;
+  /* ------Creates a sticky toolbar for navigation across pages-------*/
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* -----------------------------------------------------------------*/
+  background-color: rgb(0, 0, 0);
+}
+
+/* Configures the background settings, makes the background permanent and not resize whenever zooming */
+body{
+	background-image: url("../media assets/background3.png");
+	height: 100%;
+  width: auto;
+	background-position: top;
+	background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ------------------------------------------------------- MAIN TOOLBAR FOR NAVIGATION -------------------------- */
+div.menu {
+  height: 5rem;
+  direction: rtl;
+  /* ------Creates a sticky toolbar for navigation across pages-------*/
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* -----------------------------------------------------------------*/
+  background-color: rgb(0, 0, 0);
+}
+
+/* Home button in the toolbar */
+div.menu a.toolbar-home{
+  width:  58px;
+  transition: width 0.5s;
+}
+
+/* Button in the toolbar */
+div.menu a{
+  display: inline-block;
+  margin-right: 1em;
+  list-style-type: none;
+  margin: 2em 0;
+
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+
+  border-radius: 15px;
+  border-style: groove;
+
+  padding-right: 2em;
+  padding-left: 2em;
+
+  border-right: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
+
+  width:  130px;
+  transition: width 0.5s;
+}
+
+/* Hover over ANY button in the toolbar */
+div.menu a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  filter: drop-shadow(0px 1px 6px rgb(255, 255, 255));
+  width: 150px;
+}
+
+/* Hover over HOME button in the toolbar */
+div.menu a.toolbar-home:hover {
+  width: 78px;
+}
+
+/* Hover over a restricted button in the toolbar (has no href link) */
+div.menu a.restrictAcess:hover {
+  cursor: not-allowed;
+}
+
+/* Website image at the top left */
+div.menuphoto{
+  /* ------Creates a sticky image for navigation across pages-------*/
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+/* -----------------------------------------------------------------*/
+  display:block;
+  max-block-size: 0px;
+  width: 100px;
+}
+
+/* Main Title */
+h1.OrderTitle{
+  direction: rtl;
+  font-size: 2.5em;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+
+  border-color: white;
+  border-style: groove;
+
+  border-left: 0;
+  border-right: 0;
+}
+
+/* Titles for ALL order properties ("movie name:" "time:" ...) */
+div.order-details-table p{
+  direction: rtl;
+  font-size: large;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  text-align: center;
+}
+
+/* Movie names written ltr within <p> tags */
+div.order-details-table p span{
+  display:inline-block;
+  text-align: center;
+  direction: ltr;
+  color: rgb(255, 255, 255);
+}
+
+/* -------------------------------------------------------- Ticket count selector drop down ------------------------------------*/
+
+/* Selected */
+div.order-details-table select.ticket-count-selection{
+  direction: ltr;
+  font-size: 1em;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(0, 0, 0);
+}
+
+/* Drop down selector */
+select{
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+color: #000000;
+font-weight: bold;
+font-size: medium;
+
+background-color: rgb(255, 255, 255);
+width: 45px;
+border-radius: 10px;
+}
+
+/* Options within selection dropdown */
+select option{
+position: relative;
+display: block;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font-weight: bold;
+width: 45px;
+border-radius: 10px;
+}
+
+/* -------------------------------------------------------------------   DISCOUNT PROPERTIES  ---------------------------------*/
+/* Submission button */
+button.discount-button{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: medium;
+
+  border-color: rgb(152, 114, 184);
+  background-color: rgb(124, 124, 124);
+  border-radius: 15px;
+  border-style: hidden;
+
+  height: 20px;
+  width: 79.21px;
+  transition: width 0.3s, height 0.6s;
+}
+
+button.discount-button:hover {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+
+  cursor: pointer;
+  background-color: rgb(152, 114, 184);
+  border-color: rgb(0, 0, 0);
+  filter: drop-shadow(0px 1px 6px rgb(152, 114, 184));
+
+  width: 90px;
+  height: 30px;
+}
+
+/* Was the discount successful? Color changes inside HTML code using Javascript */
+span.discount-msg{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------------   ORDER PROPERTIES  ---------------------------------*/
+/* Fancy title*/
+legend {
+  display:table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  font-family: 'Courier New', Courier, monospace;
+  
+  font-weight: bolder;
+  font-size: large;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+}
+
+/* The data is grouped inside a fieldset */
+fieldset {
+  background-color: #000000;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+}
+
+/* Center inside the fieldset*/
+div.customer-information form label{
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+
+  color: rgb(255, 255, 255);
+  font-size: large;
+  font-weight: bolder;
+}
+
+/* Name, Last name, Phone, Credit card (inside fieldset) */
+div.customer-information{
+    direction: rtl;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+/* Reset Fields button */
+button.reset-button{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: medium;
+
+  border-radius: 5px;
+  border-color: rgb(152, 114, 184);
+  background-color: rgb(124, 124, 124);
+  border-radius: 15px;
+  border-style: hidden;
+
+  height: 20px;
+  width: 120px;
+  transition: width 1s, height 1s;
+}
+
+button.reset-button:hover {
+  color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  background-color: rgb(152, 114, 184);
+  border-color: rgb(0, 0, 0);
+  filter: drop-shadow(0px 1px 6px rgb(152, 114, 184));
+}
+
+div.g-recaptcha {
+  display: inline-block;
+  text-align: center;  
+}
+
+/* Finalize purchase */
+button.purchase-button{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: medium;
+
+  border-radius: 5px;
+  border-color: rgb(152, 114, 184);
+  background-color: rgb(124, 124, 124);
+  border-radius: 15px;
+  border-style: hidden;
+
+  height: 20px;
+  width: 120px;
+  transition: width 1s, height 1s;
+}
+
+button.purchase-button:hover {
+  color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  background-color: rgb(152, 114, 184);
+  border-color: rgb(0, 0, 0);
+  filter: drop-shadow(0px 1px 6px rgb(152, 114, 184));
+
+  width: 160px;
+  height: 40px;
+}
