@@ -114,8 +114,8 @@ function ticketSum()
  */
 function setTimeAndMovie()
 {
-    document.getElementById('movie-name').innerText = getMovieInfo('movie')[0];
-    document.getElementById('time').innerText = getMovieInfo('movie')[1];
+    document.getElementById('movie-name').innerText = getMovieName('movie');
+    document.getElementById('time').innerText = getMovieHour('movie');
 }
 
 /**

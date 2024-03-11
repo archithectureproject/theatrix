@@ -43,11 +43,6 @@ function getFinalPrice(id)
 
 function setMovieInfo(movieName, time)
 {
-	details = "[" + movieName + "," + time + "]";
+	details = stringify(' ',' ',' ',' ',time,movieName,' ',' ');
 	sessionStorage.setItem('movie', details);
-}
-
-function getMovieInfo(id)
-{
-	return sessionStorage.getItem(id);
 }
