@@ -1,6 +1,6 @@
 // Data Access Tier - logic related to the data access tier
 
-function processInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price)
+function processOrderInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price)
 {
 	var orderStr = stringify(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
 	sessionStorage.setItem('order', orderStr);
@@ -39,4 +39,15 @@ function getTicketNum(id)
 function getFinalPrice(id)
 {
 	return sessionStorage.getItem(id).split('™')[7];
+}
+
+function setMovieInfo(movieName, time)
+{
+	details = "[" + movieName + "," + time + "]";
+	sessionStorage.setItem('movie', details);
+}
+
+function getMovieInfo(id)
+{
+	return sessionStorage.getItem(id);
 }
