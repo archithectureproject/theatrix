@@ -40,7 +40,7 @@ function verifyInput()
     }
     else
     {
-        processInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
+        processOrderInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
         movePage('orderdonepage.html');
     }
     
@@ -114,8 +114,8 @@ function ticketSum()
  */
 function setTimeAndMovie()
 {
-    document.getElementById('movie-name').innerText = sessionStorage.getItem('movie_name');
-    document.getElementById('time').innerText = sessionStorage.getItem('time');
+    document.getElementById('movie-name').innerText = getMovieInfo('movie')[0];
+    document.getElementById('time').innerText = getMovieInfo('movie')[1];
 }
 
 /**
@@ -123,8 +123,7 @@ function setTimeAndMovie()
  */
 function order(movie, hour)
 {
-    sessionStorage.setItem('movie_name', movie);
-    sessionStorage.setItem('time', hour);
+    setMovieInfo(movie, hour);
     movePage('orderpage.html');
 }
 
