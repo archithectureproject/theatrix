@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Theatrix</title>
+    <link rel="stylesheet" href="..\CSS assets\Homepage.css">
+    <link rel="stylesheet" href="..\CSS assets\MenuAndBackground.css">
+    <link rel="icon" type="image/x-icon" href="..\media assets\website-logo.ico">
+    <script src="..\logic and data layers\TheatrixLogic.js"></script>
+    <script src="..\logic and data layers\database layer.js"></script>
+</head>
+
+<body onload="Clock()">
+    
+    <div id="bthn" lang="he"></div>
+    
+    <!-- Website logo at top left-->
+    <div class = "menuphoto">
+        <a class = "logo" id="menuphoto" href="homepage.html"><img src="..\media assets\menu.png"></a>
+    </div>
+
+    <!-- Toolbar Menu -->
+    <div class="menu">
+        <a id="homepage" href="homepage.html">דף בית</a>
+        <a class="restrictAcess"id="salespage">מבצעים חמים</a>
+        <a class="restrictAcess"id="clientspage">מנויים ומתנות</a>
+        <a class="restrictAcess" id="infopage">מידע ותמיכה</a>
+    </div>
+
+    <!-- Slideshow -->
+    <div id="slider">
+        <figure>
+            <img src="..\media assets\ad1.png">
+            <img src="..\media assets\ad2.png">
+            <img src="..\media assets\ad3.png">
+            <img src="..\media assets\ad4.png">
+            <img src="..\media assets\ad1.png">
+        </figure>
+    </div>
+
+    <table> <!-- Table containing all the movies -->
+
+        <tr class = "movie-listing"> <!-- Single Movie Lisitng -->
+            <td class="movie-details" id="movie1">
+                <table> <!-- Table containing the information of a single movie -->
+                    <tr>
+                        <td class="movieName">אחי הדוב</td>
+                    </tr>
+                    <tr>
+                        <td class="description">כאשר צייד אינואיט צעיר הורג דוב ללא צורך, הוא משתנה באורח קסם לדוב בעצמו כעונש, כאשר גור דברן הוא המדריך היחיד שלו לשינוי חזרה.</td>
+                    </tr>
+                    <tr>
+                        <td class="categories">אנימציה, ילדים, הרפתקאות</td>
+                    </tr>
+                    
+                    <tr> <!-- Screening hours -->
+                        <td>
+                            <button class="movieTimeButton" onclick="order('Brother Bear', '23:00')">23:00</button>
+                            <button class="movieTimeButton" onclick="order('Brother Bear', '21:00')">21:00</button>
+                            <button class="movieTimeButton" onclick="order('Brother Bear', '19:00')">19:00</button>
+                            <button class="movieTimeButton" onclick="order('Brother Bear', '17:00')">17:00</button>
+                            <button class="movieTimeButton" onclick="order('Brother Bear', '15:00')">15:00</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class = "movie-poster"><!-- Movie image -->
+                <br><img class="movie-poster" src="..\media assets\movie1.png" onclick='movePage("BrotherBearMoviePage.html")'><br>
+            </td>
+        </tr>
+
+        <!-- Repeating HTML code from above: -->
+        <tr class = "movie-listing">
+            <td class="movie-details" id="movie2">
+                <table>
+                    <tr>
+                        <td class="movieName">ברבי</td>
+                    </tr>
+                    <tr>
+                        <td class="description">ברבי וקן מבלים את זמן חייהם בעולם הצבעוני והמושלם לכאורה של ברבי לנד. עם זאת, כאשר הם מקבלים הזדמנות ללכת לעולם האמיתי, הם מגלים במהרה את ההנאות והסכנות שבחיים בין בני אדם.</td>
+                    </tr>
+                    <tr>
+                        <td class="categories">הרפתקאות, קומדיה, פנטזיה</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="movieTimeButton" onclick="order('Barbie', '23:00')">23:00</button>
+                            <button class="movieTimeButton" onclick="order('Barbie', '21:00')">21:00</button>
+                            <button class="movieTimeButton" onclick="order('Barbie', '19:00')">19:00</button>
+                            <button class="movieTimeButton" onclick="order('Barbie', '17:00')">17:00</button>
+                            <button class="movieTimeButton" onclick="order('Barbie', '15:00')">15:00</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class = "movie-poster">
+                <br><img src="..\media assets\movie2.png" onclick='movePage("BarbieMoviePage.html")'><br>
+            </td>
+        </tr>
+
+
+        <tr class = "movie-listing">
+            <td class="movie-details" id="movie3">
+                <table>
+                    <tr>
+                        <td class="movieName">הצנצנת</td>
+                    </tr>
+                    <tr>
+                        <td class="description">סרט אימה מצמרר עמוד שדרה, גבר נתקל בצנצנת זכוכית מסתורית המכילה ישות מבשרת רעות, כעת הוא מתמודד עם כוחה המרושע ועם ההשלכות המטרידות שלה.</td>
+                    </tr>
+                    <tr>
+                        <td class="categories">אימה, 18+, אפל</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="movieTimeButton" onclick="order('1 Man 1 Jar', '23:00')">23:00</button>
+                            <button class="movieTimeButton" onclick="order('1 Man 1 Jar', '21:00')">21:00</button>
+                            <button class="movieTimeButton" onclick="order('1 Man 1 Jar', '19:00')">19:00</button>
+                            <button class="movieTimeButton" onclick="order('1 Man 1 Jar', '17:00')">17:00</button>
+                            <button class="movieTimeButton" onclick="order('1 Man 1 Jar', '15:00')">15:00</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class = "movie-poster">
+                <br><img src="..\media assets\movie3.png" onclick='movePage("1man1jarMoviePage.html")'><br>
+            </td>
+        </tr>
+
+
+        <tr class = "movie-listing">
+            <td class="movie-details" id="movie4">
+                <table>
+                    <tr>
+                        <td class="movieName">ריקרול</td>
+                    </tr>
+                    <tr>
+                        <td class="description">ב-'ריקרול', קומדיה מקורית, חבורת חברים מתחילה מסע משעשע בעולם שבו ממים אינטרנטיים הופכים למציאות.</td>
+                    </tr>
+                    <tr>
+                        <td class="categories"> לכל המשפחה,אנימציה, קומדיה, הרפתקאות</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="movieTimeButton" onclick="order('Rickroll', '23:00')">23:00</button>
+                            <button class="movieTimeButton" onclick="order('Rickroll', '21:00')">21:00</button>
+                            <button class="movieTimeButton" onclick="order('Rickroll', '19:00')">19:00</button>
+                            <button class="movieTimeButton" onclick="order('Rickroll', '17:00')">17:00</button>
+                            <button class="movieTimeButton" onclick="order('Rickroll', '15:00')">15:00</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class = "movie-poster">
+                <br><img src="..\media assets\movie4.png" onclick='movePage("RickrollMoviePage.html")'><br>
+            </td>
+        </tr>
+
+
+        <tr class = "movie-listing">
+            <td class="movie-details" id="movie5">
+                <table>
+                    <tr>
+                        <td class="movieName">רחל מאופקים</td>
+                    </tr>
+                    <tr>
+                        <td class="description">החוסן של אישה מבוגרת מתגלם באמצעות האפייה שלה כשהיא חולקת את העוגיות שלה, מגישה מתיקות בתוך כאוס, ומתריסה מול פגעי העימות בכל מנה.</td>
+                    </tr>
+                    <tr>
+                        <td class="categories">דרמה, מרגש</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="movieTimeButton" onclick="order('Rachel', '23:00')">23:00</button>
+                            <button class="movieTimeButton" onclick="order('Rachel', '21:00')">21:00</button>
+                            <button class="movieTimeButton" onclick="order('Rachel', '19:00')">19:00</button>
+                            <button class="movieTimeButton" onclick="order('Rachel', '17:00')">17:00</button>
+                            <button class="movieTimeButton" onclick="order('Rachel', '15:00')">15:00</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class = "movie-poster">
+                <br><img src="..\media assets\movie5.png" onclick='movePage("RachelMoviePage.html")'><br>
+            </td>
+        </tr>
+
+
+        <tr class = "movie-listing">
+            <td class="movie-details" id="movie5">
+                <table>
+                    <tr>
+                        <td class="movieName">בוראט</td>
+                    </tr>
+                    <tr>
+                        <td class="description">מצבים מקוממים מתרחשים כאשר בוראט, כתב פופולרי (סשה ברון כהן) מקזחסטן, מגיע לארצות הברית כדי לצלם סרט תיעודי על מה שהופך את אמריקה לאומה גדולה. בדרך, הוא מצליח להעליב כמעט את כל מי שהוא פוגש, להתאהב בשחקנית פמלה אנדרסון, ולצאת למסע חוצה מדינות כדי להפוך אותה לאשתו.</td>
+                    </tr>
+                    <tr>
+                        <td class="categories">קומדיה</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="movieTimeButton" onclick="order('Borat', '23:00')">23:00</button>
+                            <button class="movieTimeButton" onclick="order('Borat', '21:00')">21:00</button>
+                            <button class="movieTimeButton" onclick="order('Borat', '19:00')">19:00</button>
+                            <button class="movieTimeButton" onclick="order('Borat', '17:00')">17:00</button>
+                            <button class="movieTimeButton" onclick="order('Borat', '15:00')">15:00</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class = "movie-poster">
+                <br><img src="..\media assets\movie6.png" onclick='movePage("BoratMoviePage.html")'><br>
+            </td>
+        </tr>
+
+
+    </table><!-- Close Movies table -->
+
+</body>
+</html>
