@@ -86,6 +86,7 @@ function cardChecker(card_num)
   
     return (num_check % 10) == 0;
 }
+
 /**
  * Checks the validity of a a phone number
  */
@@ -196,6 +197,9 @@ function clientDetailsUnsuccessful(error_message) {
     document.getElementById('error-client-details-msg').style.fontWeight = bold;
 }
 
+/**
+ * Resets the form fields for easier re-entry of details
+ */
 function resetFields() {
     document.getElementById('fname').value = '';
     document.getElementById('lname').value = '';
@@ -204,6 +208,9 @@ function resetFields() {
     document.getElementById('error-client-details-msg').innerText = '';
 }
 
+/**
+ * Creates a script element which creates one of the SaaS scripts we use in the site
+ */
 function Clock() 
 {
     var script = document.createElement("script");
