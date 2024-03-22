@@ -204,8 +204,8 @@ function resetFields() {
     document.getElementById('error-client-details-msg').innerText = '';
 }
 
-var workerInstance = Clock();
-
+//var workerInstance = new Worker Clock();
+var clockworker = new Worker("clockworker.js")
 clockWorker.onmessage = function(event) {
     console.log('Message from clockWorker:', event.data);
 };
