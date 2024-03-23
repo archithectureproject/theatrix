@@ -116,6 +116,7 @@ function CheckPhoneNumber(phone_number)
 
 /**
  * Calculates the total cost of tickets based on the number of tickets selected.
+ * and returns the new sum
  */
 function ticketSum()
 {
@@ -143,7 +144,7 @@ function order(movie, hour)
 }
 
 /**
- * Prints the successful order details and removes the order from the session storage
+ * Prints the successful order details
  */
 function loadOrderData()
 {
@@ -164,13 +165,13 @@ function checkDiscount()
     if(dis_code == "IDF4U")
     {
         current_ticket_price = 28;
-        DiscountSuccessful();
+        DiscountSuccessful(); //applies the discounted price and calculates the new sum
     }
 
     else
     {
         current_ticket_price = 35;
-        DiscountUnsuccessful();
+        DiscountUnsuccessful(); //applies the discounted price and calculates the new sum
     }
 }
 
@@ -194,6 +195,9 @@ function DiscountUnsuccessful(){
     document.getElementById('discount-code-applied-msg').style.color = 'red';
 }
 
+/**
+ * the function gets a URL for a site page and sets the window location to it to change the page
+ */
 function movePage(address)
 {
     window.location = address;
