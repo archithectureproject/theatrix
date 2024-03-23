@@ -20,13 +20,13 @@ function verifyInput()
     var error_message = "";
     var result;
 
-    nameCheckWorker = getNameCheckWorker();
+    nameCheckWorker = getNameCheckWorker(); // calls for a function that creates a singleton web worker
     
-    nameCheckWorker.postMessage({ firstName: first_name, lastName: last_name });
+    nameCheckWorker.postMessage({ firstName: first_name, lastName: last_name }); // uses our web worker to mimic multithreding
     
-    nameCheckWorker.onmessage = function(event) {
+    nameCheckWorker.onmessage = function(event) { // recieves output from out worker
         result = event.data;
-        console.log('Result from worker:', result);
+        console.log('Result from worker:', result); // debug data
 
         error_message = '';
 
@@ -48,7 +48,7 @@ function verifyInput()
         }
         if(error_message != '') 
         {
-            clientDetailsUnsuccessful(error_message)
+            clientDetailsUnsuccessful(error_message);
         }
         else 
         {
