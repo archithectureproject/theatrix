@@ -1,7 +1,7 @@
 //logic tier for ticket orders
 
 var current_ticket_price = 35; //global variable, represents the price of a single ticket currently
-var worker = null;
+var nameCheckWorker = null;
 
 /**
  * Verifies the input values and displays an error message if any of the input fields are invalid.
