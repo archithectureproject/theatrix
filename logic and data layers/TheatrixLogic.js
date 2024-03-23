@@ -33,28 +33,28 @@ function verifyInput()
         {
             error_message += "\nשם פרטי או שם משפחה לא תקינים ";
         }
+        if(!cardChecker(card_number)) 
+        {
+            error_message += "\nפרטי אשראי לא תקינים";
+        }
+        if(!CheckPhoneNumber(phone_number)) 
+        {
+            error_message += "\nמספר טלפון לא תקין";
+        }
+        if(grecaptcha.getResponse() == "") 
+        {
+            error_message += "\nהשלם-אני לא רובוט ";
+        }
+        if(error_message != '') 
+        {
+            clientDetailsUnsuccessful(error_message)
+        }
+        else 
+        {
+            processOrderInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
+            movePage('orderdonepage.html');
+        }
     };
-    if(!cardChecker(card_number)) 
-    {
-        error_message += "\nפרטי אשראי לא תקינים";
-    }
-    if(!CheckPhoneNumber(phone_number)) 
-    {
-        error_message += "\nמספר טלפון לא תקין";
-    }
-    if(grecaptcha.getResponse() == "") 
-    {
-        error_message += "\nהשלם-אני לא רובוט ";
-    }
-    if(error_message != '') 
-    {
-        clientDetailsUnsuccessful(error_message)
-    }
-    else 
-    {
-        processOrderInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
-        movePage('orderdonepage.html');
-    }
 
 }
 
