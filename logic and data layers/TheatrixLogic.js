@@ -29,7 +29,7 @@ function verifyInput()
         result = event.data;
         console.log('Result from worker:', result);
 
-        if(result) 
+        if(result && !"שם פרטי או שם משפחה לא תקינים ".test(error_message)) 
         {
             error_message += "\nשם פרטי או שם משפחה לא תקינים ";
         }
