@@ -20,7 +20,7 @@ function verifyInput()
     var error_message = "";
     var result;
 
-    var nameCheckWorker = getNameCheckWorker();
+    nameCheckWorker = getNameCheckWorker();
     
     nameCheckWorker.postMessage(first_name);
     nameCheckWorker.postMessage(last_name);
@@ -58,14 +58,12 @@ function verifyInput()
 
 }
 
-
-
 /**
  * creates a singleton web worker
  */
 function getNameCheckWorker() {
     if (!nameCheckWorker) {
-        nameCheckWorker = new Worker('nameCheckWorker.js');
+        nameCheckWorker = new Worker("../logic and data layers/nameCheckWorker.js");
     }
     return nameCheckWorker;
 }
@@ -183,7 +181,6 @@ function DiscountSuccessful(){
     document.getElementById('discount-code').value = '';
     document.getElementById('discount-code-applied-msg').innerText = "קוד הוזן בהצלחה";
     document.getElementById('discount-code-applied-msg').style.color = 'green';
-    document.getElementById('discount-code-applied-msg').style.fontWeight = bold;
 }
 
 /**
@@ -194,7 +191,6 @@ function DiscountUnsuccessful(){
     document.getElementById('discount-code').value = '';
     document.getElementById('discount-code-applied-msg').innerText = "קוד שגוי";
     document.getElementById('discount-code-applied-msg').style.color = 'red';
-    document.getElementById('discount-code-applied-msg').style.fontWeight = bold;
 }
 
 function movePage(address)
@@ -209,7 +205,6 @@ function clientDetailsUnsuccessful(error_message) {
     document.getElementById('error-client-details').value = '';
     document.getElementById('error-client-details-msg').innerText = error_message;
     document.getElementById('error-client-details-msg').style.color = 'red';
-    document.getElementById('error-client-details-msg').style.fontWeight = bold;
 }
 
 /**
