@@ -22,8 +22,7 @@ function verifyInput()
 
     nameCheckWorker = getNameCheckWorker();
     
-    nameCheckWorker.postMessage(first_name);
-    nameCheckWorker.postMessage(last_name);
+    nameCheckWorker.postMessage({ firstName: first_name, lastName: last_name });
     
     nameCheckWorker.onmessage = function(event) {
         result = event.data;
