@@ -1,6 +1,7 @@
 //logic tier for ticket orders
 
 var current_ticket_price = 35; //global variable, represents the price of a single ticket currently
+var worker = null;
 
 /**
  * Verifies the input values and displays an error message if any of the input fields are invalid.
@@ -17,42 +18,56 @@ function verifyInput()
     var hour = document.getElementById('time').innerText;
     var final_price = document.getElementById('cost').innerText;
     var error_message = "";
+    var result;
 
-    if(nameCheck(first_name) || nameCheck(last_name))
-    {
-        error_message += "\nשם פרטי או שם משפחה לא תקינים ";
-    }
-    if(!cardChecker(card_number))
-    {
-        error_message += "\nפרטי אשראי לא תקינים";
-    }
-    if(!CheckPhoneNumber(phone_number))
-    {
-        error_message += "\nמספר טלפון לא תקין";
-    }
-    if(grecaptcha.getResponse() == "")
-    {
-        error_message += "\nהשלם-אני לא רובוט ";
-    }
-    if(error_message != '')
-    {
-        clientDetailsUnsuccessful(error_message)
-    }
-    else
-    {
-        processOrderInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
-        movePage('orderdonepage.html');
-    }
+    var nameCheckWorker = getNameCheckWorker();
     
+    nameCheckWorker.postMessage(first_name);
+    nameCheckWorker.postMessage(last_name);
+    
+    nameCheckWorker.onmessage = function(event) {
+        result = event.data;
+        console.log('Result from worker:', result);
+
+        if(result) 
+        {
+            error_message += "\nשם פרטי או שם משפחה לא תקינים ";
+        }
+        if(!cardChecker(card_number)) 
+        {
+            error_message += "\nפרטי אשראי לא תקינים";
+        }
+        if(!CheckPhoneNumber(phone_number)) 
+        {
+            error_message += "\nמספר טלפון לא תקין";
+        }
+        if(grecaptcha.getResponse() == "") 
+        {
+            error_message += "\nהשלם-אני לא רובוט ";
+        }
+        if(error_message != '') 
+        {
+            clientDetailsUnsuccessful(error_message)
+        }
+        else 
+        {
+            processOrderInfo(first_name, last_name, card_number, ticket_num, hour, movie_name, phone_number, final_price);
+            movePage('orderdonepage.html');
+        }
+    };
+
 }
 
+
+
 /**
- * Checks the given name by for special characters, numbers, space included for those with space in their name
+ * creates a singleton web worker
  */
-function nameCheck(name)
-{
-    var name_pattern = /[^a-zA-Z\u0590-\u05fe\s]/;
-    return name_pattern.test(name);
+function getNameCheckWorker() {
+    if (!nameCheckWorker) {
+        nameCheckWorker = new Worker('nameCheckWorker.js');
+    }
+    return nameCheckWorker;
 }
 
 /**
