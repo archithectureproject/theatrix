@@ -22,7 +22,7 @@ function verifyInput()
 
     nameCheckWorker = getNameCheckWorker(); // calls for a function that creates a singleton web worker
     
-    nameCheckWorker.postMessage({ firstName: first_name, lastName: last_name }); // uses our web worker to mimic multithreding
+    nameCheckWorker.postMessage({ firstName: first_name, lastName: last_name }); // uses our web worker to mimic multithreding by sending a dictionary with teh first and last name
     
     nameCheckWorker.onmessage = function(event) { // recieves output from out worker
         result = event.data;
