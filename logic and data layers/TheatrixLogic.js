@@ -116,13 +116,12 @@ function CheckPhoneNumber(phone_number)
 
 /**
  * Calculates the total cost of tickets based on the number of tickets selected.
- * and returns the new sum
+ * and updates it in the document
  */
 function ticketSum()
 {
     var ticket_sum = current_ticket_price * document.getElementById('numTickets').value;
     document.getElementById('cost').innerText ='מחיר סופי:' + ticket_sum + '₪';
-    return ticket_sum;
 }
 
 /**
